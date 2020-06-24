@@ -15,6 +15,17 @@ class SearchServiceProvider extends ServiceProvider
 
         \Illuminate\Database\Eloquent\Builder::macro('search', function ($fields, $key = 'search') {
 
+            // relation
+            //if (strpos($relation, '.') !== false) {
+            //    return $this->hasNested($relation, $operator, $count, $boolean, $callback);
+            //}
+
+            //$relations = explode('.', $relations);
+
+            //whereHas('comments', function (Builder $query) {
+            //    $query->where('content', 'like', 'foo%');
+            //})
+
             if(request()->exists($key)) {
                 for($i = 0; $i < count($fields); $i++) {
                     if($i == 0) {
