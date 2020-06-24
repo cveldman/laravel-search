@@ -15,6 +15,11 @@ class SearchServiceProvider extends ServiceProvider
 
         \Illuminate\Database\Eloquent\Builder::macro('search', function ($fields, $key = 'search') {
 
+            // Set fields from model
+            if($fields == null && isset($this->model->searchable)) {
+                $fields = $this->model->searchable;
+            }
+
             /* relation
             if (strpos($relation, '.') !== false) {
                 return $this->hasNested($relation, $operator, $count, $boolean, $callback);
@@ -40,6 +45,11 @@ class SearchServiceProvider extends ServiceProvider
         });
 
         \Illuminate\Database\Query\Builder::macro('search', function ($fields, $key = 'search') {
+
+            // Set fields from model
+            if($fields == null && isset($this->model->searchable)) {
+                $fields = $this->model->searchable;
+            }
 
             if(request()->exists($key)) {
                 for($i = 0; $i < count($fields); $i++) {
