@@ -1,6 +1,6 @@
 {
     "name": "veldman/laravel-search",
-    "description": "Search",
+    "description": "Easy search for Laravel",
     "authors": [
         {
             "name": "Corné Veldman",
