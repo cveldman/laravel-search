@@ -8,6 +8,10 @@ class SearchServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'search');
+
+        Blade::include('search::default', 'search');
+
         \Illuminate\Database\Eloquent\Builder::macro('search', function ($fields, $key = 'search') {
 
             if(request()->exists($key)) {
