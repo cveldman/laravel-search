@@ -1,6 +1,6 @@
 <?php
 
-namespace Veldman\Dashboard\Providers;
+namespace Veldman\Search;
 
 use Illuminate\Support\ServiceProvider;
 
