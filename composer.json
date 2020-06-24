@@ -1,0 +1,23 @@
+{
+    "name": "veldman/search",
+    "description": "Search",
+    "authors": [
+        {
+            "name": "Corné Veldman",
+            "email": "cveldman@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Veldman\\Search\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Veldman\\Search\\SearchServiceProvider"
+            ]
+        }
+    }
+}
