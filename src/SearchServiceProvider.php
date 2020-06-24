@@ -20,6 +20,11 @@ class SearchServiceProvider extends ServiceProvider
                 $fields = $this->model->searchable;
             }
 
+            // Is fields just a single field?
+            if(is_string($fields)) {
+                $fields = [$fields];
+            }
+
             /* relation
             if (strpos($relation, '.') !== false) {
                 return $this->hasNested($relation, $operator, $count, $boolean, $callback);
@@ -49,6 +54,11 @@ class SearchServiceProvider extends ServiceProvider
             // Set fields from model
             if($fields == null && isset($this->model->searchable)) {
                 $fields = $this->model->searchable;
+            }
+
+            // Is fields just a single field?
+            if(is_string($fields)) {
+                $fields = [$fields];
             }
 
             if(request()->exists($key)) {
